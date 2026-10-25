@@ -1,0 +1,45 @@
+name: Publish ezCD 1.0.17
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-1.0.17.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-ezcd-1.0.17
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: iqonli/ezCD
+    steps:
+      - name: Fetch and verify the existing signed APK
+        shell: bash
+        run: |
+          gh api repos/iqonli/ezCD/git/blobs/6036006dac3f19bcc1830fbe8b1326b5b9981bff --jq .content | base64 --decode > ezCD-1.0.17.apk
+          printf '%s  %s\n' '2dcd2074787b7256a3d746e437944c66c01d45b334323768b191419208f74b05' 'ezCD-1.0.17.apk' > SHA256SUMS.txt
+          sha256sum --check SHA256SUMS.txt
+      - name: Publish the release
+        shell: bash
+        run: |
+          cat > release-notes.md <<'NOTES'
+          新增占位小组件与排版库直接添加入口，用于部分桌面添加后无法再次编辑小组件的情况。
+
+          - 添加到桌面页增加兼容提示与“添加占位小组件到桌面”。
+          - 占位小组件整块显示 ezCD+，点击进入“编辑小组件”；系统支持时也可长按编辑。
+          - 排版库长按菜单在“复制 JSON”前增加“添加到桌面”，添加页显示事件概要、静态排版预览及事件选择。
+          - 添加时将选定排版副本应用到新小组件，不覆盖原有小组件或事件默认排版。
+
+          Android 8.0 及以上；通用 APK，无原生库 CPU 架构限制。versionName 1.0.17 / versionCode 18，沿用原签名，可覆盖 1.0.6 新签名版及后续版本。
+          393 项主机回归测试通过；新桌面流程仍需具体设备确认。桌面长按菜单与添加权限由系统决定。
+
+          APK 为已验证的原签名安装包，本流程只上传，不重新编译或签名。校验值见 SHA256SUMS.txt。
+          NOTES
+          if gh release view v1.0.17 >/dev/null 2>&1; then
+            gh release upload v1.0.17 ezCD-1.0.17.apk SHA256SUMS.txt --clobber
+          else
+            gh release create v1.0.17 ezCD-1.0.17.apk SHA256SUMS.txt --target 47b53ea68de215c1fc60c22f1b8e10f49d16caa3 --title 'ezCD 1.0.17' --notes-file release-notes.md --latest
+          fi
