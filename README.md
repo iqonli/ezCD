@@ -1,96 +1,236 @@
 # ezCD
 
-离线日期计数与 1×1 桌面小组件。应用名为 **ezCD**，Android 包名为 `com.iqonli.ezcd`，项目地址为 https://github.com/iqonli/ezCD 。版本 1.0.17，最低 Android 8.0。
+> 专注高度自定义的桌面小组件的离线 Android 日期计数工具
 
-## 这一版
+我们的主页：https://github.com/iqonli/iqonli
 
-版本 1.0.17（versionCode 18）。为添加后无法再次编辑小组件的桌面提供两种入口：
+程序使用 ChatGPT / Codex 辅助开发。
 
-- 添加到桌面页在桌面布局说明下增加兼容提示及“添加占位小组件到桌面”。占位小组件整块显示 ezCD+，点击进入编辑小组件；支持标准重配置的桌面也可长按后编辑。
-- 小组件排版库长按菜单在“复制 JSON”之前增加“添加到桌面”。打开的尺寸页先显示事件概要，再显示静态排版预览，可选择事件；添加时把本次选定的排版副本应用到新小组件，不覆盖旧小组件或事件默认排版。
+本项目基于 [CountAway](https://github.com/santirodriguez/CountAway) 修改。新增及修改代码使用 [MIT 许可证](LICENSE)，原 CountAway 部分保留 Apache-2.0 许可证。
 
-保留原签名、资源精简、尺寸与权限检测、字体与位图渲染等既有功能。桌面是否允许添加以及是否显示长按编辑仍由系统决定；占位小组件的点按编辑提供额外入口。详见 `docs/PLACEHOLDER_AND_LIBRARY_PIN.md`。
+[下载最新版](https://github.com/iqonli/ezCD/releases/latest) | [版本记录](CHANGELOG.md) | [报告问题](https://github.com/iqonli/ezCD/issues)
+
+## 介绍
+
+创建一个事件，选择日期，就可以查看距离那一天还有多久，或者已经过去多少天。
+
+除了日期计数，ezCD 还提供小组件排版编辑和字体管理。小组件中的文字、位置、字号、字重、颜色和背景可以自行调整，排版可以保存、复制，也可以通过 JSON 分享。
+
+目前包含：
+
+- 日期计数、每周／每月／每年重复事件和到期提醒
+- 桌面小组件及添加前的宽、高格数设置
+- 原生、位图两种小组件渲染方式
+- 小组件排版库、静态预览和排版 JSON 导入导出
+- 自定义字体、ZIP 字体包导入、家族与字重分组、字体预览
+- 应用界面字体设置
+- 事件与排版库备份、恢复
+
+应用离线使用，无需账号，没有申请联网权限。
+
+## 重要提示
+
+1. 最低支持 **Android 8.0**。发布的 APK 没有原生库 CPU 架构限制，ARM32、ARM64、x86、x86_64 设备均可使用对应系统运行。
+2. **小组件能否添加、添加后的实际大小，以及长按菜单中有没有“编辑”，由系统桌面决定。** 不同厂商桌面的行为可能不一样。
+3. 自定义小组件字体和斜体在**位图渲染**下使用。原生渲染使用系统字体，部分设置不会显示。
+4. 备份不包含字体文件，也不能替另一台设备保留原文件的访问权限。迁移设备时，请另外保存字体。
+
+## 安装与使用
+
+### 安装
+
+从 [Releases](https://github.com/iqonli/ezCD/releases) 下载 `.apk` 文件并安装。
+
+正常更新请直接覆盖安装。自行编译的 Debug 包使用电脑上的调试签名，不能直接覆盖官方发布包。
+
+### 创建事件
+
+1. 打开应用，添加事件。
+2. 输入名称并选择日期，按需设置重复、提醒和“计入当日”。
+3. 保存后，在事件列表查看计数。
+
+普通事件会根据日期自动显示“还有”“已过”或“今天”，不需要手动切换正数、倒数模式。
+
+### 添加到桌面
+
+1. 在事件的菜单中选择`添加到桌面`。
+2. 查看事件概要，设置小组件的宽、高格数。
+3. 点击`添加到桌面`，按系统桌面的提示完成添加。
+
+能读取到桌面布局时，输入范围会按检测结果限制；无法读取时，由桌面最终确认。应用目前提供每轴 1～16 格的尺寸预设，**不代表你的桌面一定有这么多格，也不保证桌面按请求尺寸添加。**
+
+如果添加失败，请检查桌面是否锁定布局、是否允许添加小组件或创建桌面快捷方式，也可以从桌面的小组件列表中手动添加 ezCD。
+
+### 系统没有“长按—编辑”怎么办
+
+有些系统可以添加小组件，却不提供添加后再次修改的入口。可以使用以下两种方法。
+
+**先做好排版，再添加：**
+
+1. 打开`设置 > 小组件排版库`。
+2. 添加一个排版，选择事件并完成编辑，保存。
+3. 长按这个排版，选择`添加到桌面`。
+4. 在新页面确认事件概要、静态排版预览和尺寸，再添加。
+
+选定排版会应用到新小组件，不会覆盖已经放在桌面上的其他小组件或事件默认排版。
+
+**先添加占位小组件：**
+
+在`添加到桌面`页面点击`添加占位小组件到桌面`。占位小组件整块显示 **ezCD+**，点按即可进入对应的`编辑小组件`页面，选择事件、修改排版并保存。
+
+这两个入口用来减少对系统“长按—编辑”的依赖，不能绕过桌面的添加权限，也不能强制系统显示编辑菜单。
+
+## 小组件排版
+
+编辑小组件时，可以切换`原生`和`位图`渲染，默认使用原生。
+
+| 渲染方式 | 说明 |
+| --- | --- |
+| 原生 | 使用 Android 系统文字控件和系统字体 |
+| 位图 | 按桌面报告的小组件尺寸绘制图片，支持自定义字体、斜体等设置 |
+
+位图渲染仍支持背景不透明度。
+
+`设置 > 小组件排版库`用于保存和管理排版。长按项目可以重命名、添加到桌面、复制 JSON、创建副本或删除。
+
+**排版 JSON 不包含字体文件。** 分享使用了自定义字体的排版时，需要同时说明使用的字体，由接收方自行导入。
+
+## 字体管理
+
+打开`设置 > 字体管理`，先通过右上角的设置按钮选择字体存储方式，再点击加号导入。
+
+支持：
+
+- `.ttf`、`.otf`、`.ttc`、`.otc`
+- ZIP 压缩包，会遍历包内各级目录中的字体文件
+- 按字体家族分组、按字重排序
+- 字体信息与多字号预览、自定义预览文字和字号
+- 长按多选、删除
+
+字体可以保存在应用内部、选择的目录，或者直接引用原文件。切换方式时可能涉及复制、移动、删除文件或清除字体记录，具体以操作前的弹窗为准。
+
+选择`仅原文件`后，请保留原文件及其访问权限。原文件被移动、删除或无法访问时，对应字体可能无法继续使用。
+
+### 应用字体和小组件字体是分开的
+
+字体管理设置中的`应用内显示字体`只控制应用界面。
+
+小组件里的字体，需要在`编辑小组件`中切换到位图渲染，再为对应文字选择。
+
+### 字重和斜体
+
+静态字体按家族中实际存在的字重匹配；支持相应轴的可变字体，可以进行字重调整。
+
+**导入四个静态字重，不会自动得到一套可以无级变化的可变字体。**
+
+斜体优先使用字体提供的斜体字形或可变轴。只能模拟倾斜时，界面会显示`斜体 [模拟]`。
 
 ## 计数规则
 
-不再提供正数/倒数模式选择。普通事件显示与所选日期相差的天数；过去显示已过，未来显示还有，当天显示今天。勾选“计入当日”时，在日期差的绝对值上加1。
+普通事件按本地日历日期计算天数。
 
-| 所选日期 | 未勾选 | 勾选 |
+| 所选日期 | 未勾选“计入当日” | 勾选“计入当日” |
 | --- | ---: | ---: |
 | 昨天 | 1 | 2 |
 | 今天 | 0 | 1 |
 | 明天 | 1 | 2 |
 
-所选日期当天的状态始终是“今天”，不会因为勾选而改成未来。
-按本地日历日期计算，不通过毫秒除以24小时计算日期差。重复事件先解析实际的下一次日期，再应用计数规则。通知仍按实际事件日及提前天数调度，不因“计入当日”而提前或延后。
+“计入当日”会在日期差的绝对值上加 1，但所选日期当天的状态仍然是“今天”。
 
-备份格式schema11，新增前景色/背景色的独立默认状态，兼容读取schema1–10；旧记录保持显式颜色，不根据白色推断默认。旧版本不能读取schema11，请保留旧备份。1.0.7导出使用ezcd-backup v1完整封装，包含schema11事件、原始添加时间、排序方式和排版库；可继续导入旧版schema1–11事件备份。完整新备份不能由1.0.6及更早版本读取。详见`docs/BACKUPS_AND_LIBRARY.md`。
+重复事件先确定实际发生日期，再计算天数。提醒按实际事件日及提前天数安排，不因勾选“计入当日”而提前或延后。
 
-## 已编译的安装包
+## 备份与恢复
 
-`ezCD-1.0.17.apk`为通用release包，支持arm64-v8a，可覆盖1.0.6新签名版；不能覆盖1.0.5及更早的旧签名版。验证记录见`docs/VALIDATION.md`，签名说明见`docs/SIGNING.md`。
+建议在更换设备、卸载或尝试旧版本前，先通过应用内的备份功能导出数据。
 
-## 编译：先复用缓存
+完整备份包含事件和排版库。单独导出的排版 JSON 只包含排版，不能代替完整备份。
 
-按用户已有环境配置：**Gradle 9.6.1、AGP 9.2.1、AGP 内置 Kotlin、compileSdk 35、targetSdk 34**。适用于 Android Studio Quail 1（2026.1.1）；Gradle JDK 直接选择 Studio 自带的 JBR 21，无需额外安装 JDK。Java / Kotlin 输出字节码仍为17。
+字体文件需要另外保存。恢复后，如原字体不可访问，需要重新导入或选择字体。
 
-AGP 9.2 要求 Gradle 至少9.4.1、SDK Build Tools 36.0.0、JDK 至少17。compileSdk 35 与 Build Tools 36.0.0 是两个独立组件；已有 Gradle 9.6.1 不等于已缓存 AGP、Kotlin 编译器、标准库和 Build Tools。目标 API 34 不代表可直接满足届时应用商店的新应用上架政策。
+新版本生成的备份不保证能由旧版本读取，请保留原始备份。
 
-应用运行依赖只有 Kotlin 标准库；日期、JSON、UI、文件选择、小组件和提醒均使用 Android 平台 API。JUnit 与 org.json 只用于 JVM 测试，不会进入 APK，也不会在仅 assembleDebug 时解析测试依赖。
+## 自行编译
 
-**不要为了这个项目先清空缓存、运行 clean，或升级整套 Android Studio。** Gradle、AGP、Kotlin 和 SDK 的版本分别有兼容关系；“已有 Gradle”不代表对应构建插件也已缓存。
+普通使用请直接下载 Release，以下内容供需要修改源码的人参考。
 
-Windows 已有 Gradle 时，在项目目录运行：
+当前工程使用：
 
-```bat
-build-local.bat
+| 项目 | 版本 |
+| --- | --- |
+| Gradle | 9.6.1 |
+| Android Gradle Plugin | 9.2.1 |
+| Kotlin | AGP 内置 Kotlin |
+| JDK | 17 或兼容版本 |
+| compileSdk | 35 |
+| targetSdk | 34 |
+| SDK Build Tools | 36.0.0 |
+
+克隆仓库，或下载源码并解压：
+
+```bash
+git clone https://github.com/iqonli/ezCD.git
+cd ezCD
 ```
 
-它仅调用本机 Gradle，并带 `--offline`；不会调用 Wrapper 下载 Gradle。如果 Gradle 未加入 PATH：
+配置 Android SDK 路径，确保 `java` 命令可用。首次编译可能需要下载 Gradle 和缺少的构建组件。
 
-```bat
-set "EZCD_GRADLE=T:\Gradle\gradle-9.6.1\bin\gradle.bat"
-build-local.bat
-```
-
-也可以指向 Android Studio 中配置的 Gradle user home 下 `wrapper\dists` 内已有9.6.1发行版的 `bin\gradle.bat`。上面的 T 盘路径只是示例，请换成你实际已解压的路径。Android Studio 自身通常不附带任意版本的完整 Gradle 发行版。
-
-通过 Android Studio 编译时，保留你现有的 T 盘 Gradle user home 和 JBR 21。Distribution 可继续选 Wrapper；若之前缓存的是9.6.1的 `all` 发行版，或解压在其他位置，可改选 Local installation 并指向该9.6.1目录，避免 Wrapper 再取 `bin` 发行版。不要把 Gradle user home 和 Gradle installation 目录混为一处。
-
-Linux/macOS：
-
-```sh
-EZCD_GRADLE=/path/to/gradle ./build-local.sh
-```
-
-若 API 35 未安装但已有 API 33 或 34，可以先显式指定现有 SDK：
-
-```bat
-build-local.bat -PezcdCompileSdk=34
-```
-
-源码使用的最高平台 API 为33，compileSdk 至少33。降低 compileSdk 不会免除 AGP 对 Build Tools 36.0.0 的要求。需要显式指定本版默认值时：
-
-```bat
-build-local.bat -PezcdAgp=9.2.1 -PezcdCompileSdk=35
-```
-
-项目使用 AGP 9 的内置 Kotlin，不再单独声明 `org.jetbrains.kotlin.android`，也不再提供 `ezcdKotlin` 参数；不要直接换回 AGP 8.x。SDK 路径可通过 Android Studio 生成的 `local.properties` 中 `sdk.dir=...` 指定，或使用已有的 ANDROID_HOME。
-
-只有确认允许下载缺少的包后，才运行：
+Windows：
 
 ```bat
 gradlew.bat :app:assembleDebug
 ```
 
-Wrapper 指定 Gradle 9.6.1 的 `bin` 发行版，仅在对应发行版未缓存时下载；Gradle 会获取缺少的构建插件和工具。该命令不是离线命令，也不承诺零下载。
+Linux / macOS：
 
-APK：`app/build/outputs/apk/debug/app-debug.apk`。debug APK 自动使用本机调试密钥签名，可安装；release 包需自行配置签名，不能使用上游作者的签名覆盖原应用。ezCD 与 CountAway 包名不同，可以共存。
+```sh
+sh gradlew :app:assembleDebug
+```
 
-测试：`gradlew.bat :app:testDebugUnitTest`；可选的无下载源码检查：`python tools/check-source.py`。本次构建工具调整见 `docs/BUILD_TOOLCHAIN.md`。完整验证范围见 `docs/VALIDATION.md`，上游 issue 检查见 `docs/UPSTREAM_ISSUES.md`，小组件实现与排版扩展见 `docs/WIDGETS.md`。
+生成的 Debug APK 位于：
 
-## 许可证
+```text
+app/build/outputs/apk/debug/app-debug.apk
+```
 
-本项目新增及修改代码使用 MIT（`LICENSE`），版权主体为 IQ Online Studio（iqonli）。原 CountAway 部分保留 Apache-2.0（`licenses/Apache-2.0-CountAway.txt`）；`NOTICE`、`UPSTREAM.md` 和应用内“关于”保留归属声明。Google Material 图形遵循 Apache-2.0，归属见 NOTICE；Noto 字形使用 OFL-1.1（`licenses/OFL-NotoSans.txt`）。根目录写 MIT 不会抹去上游代码已有的许可证义务。
+已有本机 Gradle 和完整依赖缓存时，可以使用离线构建脚本：
 
-同版本资源精简重编译：保留所有尺寸、字重和语言资源，进一步压缩资源表；复现与验证见 [RESOURCE_PACKAGING.md](docs/RESOURCE_PACKAGING.md)。
+```bat
+build-local.bat
+```
+
+```sh
+sh build-local.sh
+```
+
+不要一遇到构建问题就清空全部缓存；离线构建也需要提前准备好对应版本的构建组件。
+
+运行普通单元测试：
+
+```sh
+sh gradlew :app:testDebugUnitTest
+```
+
+可选的界面与存储回归测试：
+
+```sh
+sh gradlew -I tools/ui-smoke.init.gradle :app:testDebugUnitTest
+```
+
+Release 构建需另外配置自己的签名。资源表精简脚本位于 [`tools/optimize-release.py`](tools/optimize-release.py)，详细构建、功能实现与验证记录收录在 [`docs/docs.zip`](docs/docs.zip)。
+
+## 鸣谢与许可证
+
+感谢 [CountAway](https://github.com/santirodriguez/CountAway) 提供的项目基础。
+
+- ezCD 新增及修改代码：[MIT](LICENSE)
+- 原 CountAway 部分：[Apache-2.0](licenses/Apache-2.0-CountAway.txt)
+- Google Material 图形：Apache-2.0
+- 图标使用的 Noto 字形：[SIL Open Font License 1.1](licenses/OFL-NotoSans.txt)
+
+第三方归属说明见 [NOTICE](NOTICE)，上游来源见 [UPSTREAM.md](UPSTREAM.md)。分发或修改时，请保留对应的许可证与版权声明。
+
+## 反馈
+
+发现问题可以提 [Issue](https://github.com/iqonli/ezCD/issues)，请尽量提供应用版本、Android 版本、手机型号、桌面名称、复现步骤和截图。小组件添加失败时，也可以附上应用提供的诊断信息。
+
+有事没事请加QQ群：743278470，你可以报告错误，寻求帮助
