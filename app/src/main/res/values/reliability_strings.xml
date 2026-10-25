@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="data_save_failed" translatable="false">Could not save this countdown. Your changes are still here.</string>
+    <string name="data_delete_failed" translatable="false">Could not delete this countdown.</string>
+    <string name="data_newer_version_title" translatable="false">Newer ezCD data</string>
+    <string name="data_newer_version_description" translatable="false">These data were created by a newer ezCD version. Update ezCD before editing them.</string>
+    <string name="data_newer_version_edit_blocked" translatable="false">These data were created by a newer ezCD version. Update ezCD before editing.</string>
+    <string name="backup_import_newer_version">This backup was created by a newer ezCD version.</string>
+    <string name="reminder_schedule_unavailable" translatable="false">This reminder would have been scheduled before today. Choose a later date or a closer reminder.</string>
+    <string name="notification_blocked_title" translatable="false">Notifications are disabled</string>
+    <string name="notification_blocked_message" translatable="false">This reminder will stay saved, but Android will not deliver it until notifications are enabled for ezCD.</string>
+    <string name="notification_open_settings" translatable="false">Open notification settings</string>
+    <string name="title_too_long" translatable="false">Countdown titles can be up to %1$d characters.</string>
+    <string name="data_conflict_title" translatable="false">Countdown changed</string>
+    <string name="data_conflict_message" translatable="false">This countdown changed or was removed elsewhere. Reload the latest saved state, or keep editing this draft.</string>
+    <string name="data_conflict_reload" translatable="false">Reload</string>
+    <string name="data_conflict_keep_editing" translatable="false">Keep editing</string>
+    <string name="language_follow_system_enabled" translatable="false">Following the system language.</string>
+    <string name="event_meta_repeating" translatable="false">%1$s · %2$s · %3$s</string>
+    <string name="schedule_next_occurrence" translatable="false">Next occurrence: %1$s · Repeats %2$s.</string>
+    <string name="schedule_next_reminder" translatable="false">Next reminder: %1$s · around 09:00.</string>
+    <string name="schedule_month_end_note" translatable="false">In shorter months, it repeats on the last day.</string>
+    <string name="schedule_leap_day_note" translatable="false">On non-leap years, February 29 repeats on February 28.</string>
+    <string name="unsaved_changes_title" translatable="false">Discard unsaved changes?</string>
+    <string name="unsaved_changes_message" translatable="false">Your draft has changes that haven’t been saved.</string>
+    <string name="unsaved_changes_discard" translatable="false">Discard</string>
+    <string name="external_action_unavailable" translatable="false">No app is available for this action.</string>
+    <string name="backup_provider_unavailable">No document provider is available.</string>
+    <string name="share_unavailable">No app is available to share this countdown.</string>
+    <string name="backup_import_confirm_details" translatable="false">Incoming events: %1$d\nCurrently saved: %2$d\n\nAll current events are replaced. Widget placement is not restored.</string>
+    <string name="backup_import_confirm_details_unknown" translatable="false">Incoming events: %1$d\nThe current saved count could not be read.\n\nAll current events are replaced. Widget placement is not restored.</string>
+    <string name="backup_export_current_first" translatable="false">Export current first</string>
+</resources>

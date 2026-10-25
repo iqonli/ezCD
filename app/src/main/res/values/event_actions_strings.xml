@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="event_action_edit" translatable="false">Edit</string>
+    <string name="event_action_duplicate" translatable="false">Duplicate</string>
+    <string name="event_action_widget" translatable="false">Add widget</string>
+    <string name="event_actions_label" translatable="false">Event actions</string>
+    <string name="event_actions_description" translatable="false">Actions for %1$s</string>
+    <string name="event_copy_title" translatable="false">New copy</string>
+    <string name="copy_source_changed" translatable="false">This event changed or was removed. Open the list and choose Duplicate again.</string>
+    <string name="event_action_stale" translatable="false">This event changed or was removed. Check the refreshed list and try again.</string>
+</resources>

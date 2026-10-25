@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="action_share">分享</string>
+    <string name="backup_export_failed">无法导出备份。</string>
+    <string name="backup_export_success">备份导出成功！</string>
+    <string name="backup_import_failed">无法导入备份。</string>
+    <string name="backup_import_invalid">这不是有效的 ezCD 备份。</string>
+    <string name="backup_import_newer_version">此备份由更高版本的 ezCD 创建。</string>
+    <string name="backup_import_success">备份导入成功！</string>
+    <string name="backup_provider_unavailable">没有可用的文件提供程序。</string>
+    <string name="event_icon_airplane">飞机</string>
+    <string name="event_icon_book">书本</string>
+    <string name="event_icon_cake">蛋糕</string>
+    <string name="event_icon_calendar">日历</string>
+    <string name="event_icon_confetti">庆祝</string>
+    <string name="event_icon_flag">旗帜</string>
+    <string name="event_icon_gift">礼物</string>
+    <string name="event_icon_heart">爱心</string>
+    <string name="event_icon_hourglass">沙漏</string>
+    <string name="event_icon_music">音乐</string>
+    <string name="event_icon_pin">图钉</string>
+    <string name="event_icon_star">星星</string>
+    <string name="event_type_anniversary">纪念日</string>
+    <string name="event_type_birthday">生日</string>
+    <string name="event_type_concert">音乐会</string>
+    <string name="event_type_custom">自定义</string>
+    <string name="event_type_deadline">截止日期</string>
+    <string name="event_type_event">事件</string>
+    <string name="event_type_exam">考试</string>
+    <string name="event_type_party">聚会</string>
+    <string name="event_type_trip">旅行</string>
+    <string name="repeat_monthly">每月</string>
+    <string name="repeat_weekly">每周</string>
+    <string name="repeat_yearly">每年</string>
+    <string name="share_countdown_format">%1$s — %2$s · %3$s</string>
+    <string name="share_unavailable">没有可用的分享应用。</string>
+</resources>

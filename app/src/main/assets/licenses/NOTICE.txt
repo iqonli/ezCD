@@ -1,0 +1,20 @@
+ezCD
+Copyright (c) 2026 IQ Online Studio
+https://github.com/iqonli/ezCD
+
+ezCD additions and modifications are available under the MIT License in LICENSE.
+This distribution contains modified code from CountAway:
+Copyright 2026 Santiago Rodriguez
+https://github.com/santirodriguez/CountAway
+Original CountAway portions retain their Apache License 2.0 license.
+A copy is included at licenses/Apache-2.0-CountAway.txt.
+
+The launcher wordmark is derived from Noto Sans glyph outlines:
+Copyright 2018 The Noto Project Authors (github.com/googlei18n/noto-fonts)
+SIL Open Font License 1.1; see licenses/OFL-NotoSans.txt.
+The app name ezCD and the outlined icon are ezCD branding; no upstream
+trademark permission or endorsement is asserted.
+
+Toolbar vector paths: Google Material Design Icons (Android Material system shapes).
+Copyright Google LLC; Apache License 2.0.
+https://github.com/google/material-design-icons

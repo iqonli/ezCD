@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ezCD" parent="@style/EzcdBaseTheme">
+        <item name="android:navigationBarColor">#FFEEEEEE</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ez_pin_custom_size">Custom widget size</string>
+  <string name="ez_pin_width">Width</string>
+  <string name="ez_pin_height">Height</string>
+  <string name="ez_pin_cells">cells</string>
+  <string name="ez_pin_range">%1$d–%2$d</string>
+  <string name="ez_pin_grid">Desktop grid: %1$d × %2$d cells</string>
+  <string name="ez_pin_grid_unknown">The launcher has not provided its grid limits. Final size is confirmed by the launcher; you can resize it on the desktop.</string>
+  <string name="ez_pin_permission_denied">Creating desktop shortcuts is disabled. Allow it in app permissions before adding the widget.</string>
+  <string name="ez_pin_open_permissions">Permissions</string>
+  <string name="ez_pin_old_system">On this Android version, add the widget first, then resize it on the desktop.</string>
+</resources>

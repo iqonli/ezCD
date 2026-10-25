@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages defaultTag="en">
+ <language tag="zh-Hans" qualifier="values-b+zh+Hans" endonym="简体中文" icon="@drawable/ic_language" fdroidLocale="zh-CN" playLocale="zh-CN" />
+ <language tag="zh-Hant" qualifier="values-b+zh+Hant" endonym="繁體中文" icon="@drawable/ic_language" fdroidLocale="zh-TW" playLocale="zh-TW" />
+ <language tag="en" qualifier="values" endonym="English" icon="@drawable/ic_language" fdroidLocale="en-US" playLocale="en-US" />
+</languages>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="event_title_input" />
+    <item type="id" name="event_include_input" />
+    <item type="id" name="event_repeat_input" />
+    <item type="id" name="event_reminder_input" />
+    <item name="widget_save_action" type="id"/>
+</resources>

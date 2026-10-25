@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <plurals name="home_days" translatable="false">
+        <item quantity="one">In %1$s day</item>
+        <item quantity="other">In %1$s days</item>
+    </plurals>
+    <plurals name="home_days_arrival" translatable="false">
+        <item quantity="one">%1$s day</item>
+        <item quantity="other">%1$s days</item>
+    </plurals>
+    <plurals name="home_days_ago" translatable="false">
+        <item quantity="one">%1$s day ago</item>
+        <item quantity="other">%1$s days ago</item>
+    </plurals>
+    <plurals name="home_days_since" translatable="false">
+        <item quantity="one">+%1$s day</item>
+        <item quantity="other">+%1$s days</item>
+    </plurals>
+    <plurals name="home_days_until_start" translatable="false">
+        <item quantity="one">In %1$s day</item>
+        <item quantity="other">In %1$s days</item>
+    </plurals>
+    <string name="home_start_date" translatable="false">Starts %1$s</string>
+    <string name="home_since_date" translatable="false">Since %1$s</string>
+    <string name="home_section_upcoming" translatable="false">UPCOMING ↓</string>
+    <string name="home_section_count_up" translatable="false">COUNT UP ↑</string>
+    <string name="home_section_past" translatable="false">PAST ↓</string>
+    <string name="home_section_upcoming_accessibility" translatable="false">Upcoming count-down events</string>
+    <string name="home_section_count_up_accessibility" translatable="false">Count-up events</string>
+    <string name="home_section_past_accessibility" translatable="false">Past count-down events</string>
+</resources>

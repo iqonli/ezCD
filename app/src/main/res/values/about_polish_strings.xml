@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="about_step_one" translatable="false">1</string>
+    <string name="about_step_two" translatable="false">2</string>
+    <string name="about_step_three" translatable="false">3</string>
+    <string name="about_version_compact" translatable="false">v%1$s</string>
+    <string name="about_create_countdown" translatable="false">Create a countdown</string>
+    <string name="about_create_countdown_note" translatable="false">Pick what matters and set the date.</string>
+    <string name="about_add_widget" translatable="false">Long-press a countdown</string>
+    <string name="about_add_widget_note" translatable="false">Choose a style, then add it to Home.</string>
+    <string name="about_stop_checking" translatable="false">Stop checking the calendar</string>
+    <string name="about_stop_checking_note" translatable="false">That\'s kind of the point.</string>
+    <string name="about_widget_pin_unavailable" translatable="false">Add the widget from your home screen instead.</string>
+    <string name="backup_description_compact" translatable="false">Export. Restore. Future crisis avoided.</string>
+    <string name="backup_export_short" translatable="false">Export</string>
+    <string name="backup_import_short" translatable="false">Import</string>
+    <string name="about_support_project" translatable="false">Support the project</string>
+    <string name="about_author_name" translatable="false">Created by Santiago Rodriguez</string>
+    <string name="about_website" translatable="false">Website</string>
+    <string name="about_privacy_policy" translatable="false">Privacy</string>
+    <string name="privacy_policy_url" translatable="false">https://countaway.cajapersonal.org/privacy/</string>
+    <string name="about_widget_long_press_hint" translatable="false">Long-press a countdown to choose its widget style.</string>
+    <string name="about_calendar_reaction_1" translatable="false">All set, champ. Nothing else to do.</string>
+    <string name="about_calendar_reaction_3" translatable="false">You\'re still here. No idea why, but you\'re still here.</string>
+    <string name="about_calendar_reaction_7" translatable="false">Congrats, you\'ve unlocked Developer opti— oh. Right. We don\'t do that here.</string>
+    <string name="about_calendar_reaction_10" translatable="false">If you put this much persistence into remembering dates, we\'d shut the app down today.</string>
+    <string name="about_calendar_reaction_20" translatable="false">20 taps. 6 hours, 19 minutes right ascension, 14 degrees, 22 minutes declination... No sighting.</string>
+    <string name="about_calendar_reaction_50" translatable="false">This isn\'t funny anymore. One more and that\'s it, okay?</string>
+    <string name="about_calendar_reaction_100" translatable="false">100 taps. That\'s as far as we go. We\'re not helping you get carpal tunnel from tapping a button we already told you did nothing.</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="count_up_start_date" translatable="false">Start date</string>
+    <string name="count_up_explanation" translatable="false">Counts days from the start date. It does not repeat or send reminders.</string>
+    <string name="count_mode_confirm_title" translatable="false">Switch to count up?</string>
+    <string name="count_mode_confirm_message" translatable="false">This removes repetition and reminders from this draft. Your saved event stays unchanged until you save.</string>
+    <string name="count_mode_confirm_action" translatable="false">Switch mode</string>
+    <string name="event_new_title" translatable="false">New event</string>
+    <string name="event_edit_title" translatable="false">Edit event</string>
+    <string name="action_add_event" translatable="false">Add event</string>
+    <string name="widget_count_up_option" translatable="false">%1$s · Count up · %2$s</string>
+</resources>

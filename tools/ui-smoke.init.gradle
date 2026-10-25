@@ -1,0 +1,24 @@
+// Optional host-side UI regression checks. This init script is never used by normal APK builds.
+// Invoke explicitly with: gradlew -I tools/ui-smoke.init.gradle :app:testDebugUnitTest --tests '*WidgetConfigActivityUiTest'
+gradle.beforeProject { project ->
+    project.plugins.withId('com.android.application') {
+        project.layout.buildDirectory.set(project.layout.projectDirectory.dir('build-ui-smoke'))
+        def android = project.extensions.getByName('android')
+        android.testOptions.unitTests.includeAndroidResources = true
+        android.sourceSets.getByName('test').java.srcDir(project.rootProject.file('tools/ui-smoke-tests'))
+        android.sourceSets.getByName('test').kotlin.srcDir(project.rootProject.file('tools/ui-smoke-tests'))
+        project.dependencies.add('testImplementation', 'org.robolectric:robolectric:4.14.1')
+        project.tasks.withType(org.gradle.api.tasks.testing.Test).configureEach {
+            maxHeapSize = '1200m'
+            systemProperty 'ezcd.preview.dir', project.layout.buildDirectory.dir('widget-previews').get().asFile.absolutePath
+            systemProperty 'robolectric.dependency.repo.url', 'https://repo.maven.apache.org/maven2'
+            // A proxy, when explicitly supplied for this optional test run, also applies to Robolectric SDK fetches.
+            ['https.proxyHost','https.proxyPort','http.proxyHost','http.proxyPort'].each { key ->
+                if (System.getProperty(key) != null) systemProperty key, System.getProperty(key)
+            }
+            jvmArgs '--add-opens=java.base/java.lang=ALL-UNNAMED', '--add-opens=java.base/java.util=ALL-UNNAMED',
+                '--add-opens=java.base/java.io=ALL-UNNAMED', '--add-opens=java.base/java.net=ALL-UNNAMED',
+                '--add-opens=java.base/java.security=ALL-UNNAMED', '--add-opens=java.base/java.text=ALL-UNNAMED'
+        }
+    }
+}

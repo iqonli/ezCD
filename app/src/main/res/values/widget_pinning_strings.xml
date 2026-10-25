@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_add_accessibility_action" translatable="false">Add widget</string>
+    <string name="widget_pin_setup_title" translatable="false">Add to Home screen</string>
+    <string name="widget_pin_setup_description" translatable="false">Choose a style for this countdown. Your last successfully added style becomes the starting point next time.</string>
+    <string name="widget_pin_setup_add" translatable="false">Add to Home screen</string>
+    <string name="widget_pin_setup_system_hint" translatable="false">System follows your device’s Light or Dark appearance.</string>
+    <string name="widget_pin_event_unavailable" translatable="false">This countdown is no longer available.</string>
+    <string name="widget_pin_unavailable_guidance" translatable="false">Your launcher couldn’t start widget pinning. Add ezCD from the home-screen widget picker and check whether the home-screen layout is locked.</string>
+    <string name="widget_pin_not_added" translatable="false">Widget wasn’t added. Your choices are still here.</string>
+    <string name="widget_pin_multiple_detected" translatable="false">ezCD couldn’t safely identify the new widget. Open it from your Home screen to configure it.</string>
+    <string name="widget_pin_conflict" translatable="false">That widget was already configured, so ezCD left it unchanged.</string>
+    <string name="widget_instance_unavailable" translatable="false">That widget is no longer available.</string>
+    <string name="widget_style_summary" translatable="false">Style: %1$s · Appearance: %2$s</string>
+</resources>

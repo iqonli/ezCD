@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ez_pin_custom_size">自定义小组件大小</string>
+  <string name="ez_pin_width">宽度</string>
+  <string name="ez_pin_height">高度</string>
+  <string name="ez_pin_cells">格</string>
+  <string name="ez_pin_range">%1$d–%2$d</string>
+  <string name="ez_pin_grid">桌面布局：%1$d × %2$d 格</string>
+  <string name="ez_pin_grid_unknown">桌面未提供网格范围，最终尺寸以桌面确认为准；添加后可在桌面调整。</string>
+  <string name="ez_pin_permission_denied">系统已禁止创建桌面快捷方式，请先在应用权限中允许。</string>
+  <string name="ez_pin_open_permissions">去设置</string>
+  <string name="ez_pin_old_system">当前系统需先添加小组件，再在桌面调整大小。</string>
+</resources>

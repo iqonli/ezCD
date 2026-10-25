@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="widget_preview_label" translatable="false">Preview</string>
+    <string name="widget_preview_value" translatable="false">—</string>
+    <string name="widget_preview_sample_count" translatable="false">12</string>
+    <string name="widget_background_pulse" translatable="false">Pulse</string>
+    <string name="widget_background_breeze" translatable="false">Breeze</string>
+    <string name="widget_background_ember" translatable="false">Ember</string>
+</resources>

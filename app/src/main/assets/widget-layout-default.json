@@ -1,0 +1,177 @@
+{
+  "format": "ezcd-widget-layout",
+  "version": 2,
+  "layouts": {
+    "small": {
+      "background": "auto",
+      "elements": [
+        {
+          "id": "title",
+          "source": "title",
+          "visible": true,
+          "content": "",
+          "weight": 500,
+          "color": "default",
+          "top": 22,
+          "width": 90,
+          "height": 30,
+          "alignment": "center",
+          "maxSize": 16
+        },
+        {
+          "id": "count",
+          "source": "count",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "auto",
+          "top": 64,
+          "width": 90,
+          "height": 52,
+          "alignment": "center",
+          "maxSize": 32
+        },
+        {
+          "id": "status",
+          "source": "status",
+          "visible": false,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 85,
+          "width": 90,
+          "height": 14,
+          "alignment": "center",
+          "maxSize": 12
+        },
+        {
+          "id": "date",
+          "source": "date",
+          "visible": false,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 94,
+          "width": 90,
+          "height": 10,
+          "alignment": "center",
+          "maxSize": 10
+        }
+      ]
+    },
+    "medium": {
+      "background": "auto",
+      "elements": [
+        {
+          "id": "title",
+          "source": "title",
+          "visible": true,
+          "content": "",
+          "weight": 500,
+          "color": "default",
+          "top": 20,
+          "width": 90,
+          "height": 24,
+          "alignment": "center",
+          "maxSize": 18
+        },
+        {
+          "id": "count",
+          "source": "count",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "auto",
+          "top": 55,
+          "width": 90,
+          "height": 40,
+          "alignment": "center",
+          "maxSize": 38
+        },
+        {
+          "id": "status",
+          "source": "status",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 88,
+          "width": 90,
+          "height": 16,
+          "alignment": "center",
+          "maxSize": 12
+        },
+        {
+          "id": "date",
+          "source": "date",
+          "visible": false,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 94,
+          "width": 90,
+          "height": 10,
+          "alignment": "center",
+          "maxSize": 10
+        }
+      ]
+    },
+    "large": {
+      "background": "auto",
+      "elements": [
+        {
+          "id": "title",
+          "source": "title",
+          "visible": true,
+          "content": "",
+          "weight": 500,
+          "color": "default",
+          "top": 18,
+          "width": 90,
+          "height": 22,
+          "alignment": "center",
+          "maxSize": 20
+        },
+        {
+          "id": "count",
+          "source": "count",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "auto",
+          "top": 50,
+          "width": 90,
+          "height": 36,
+          "alignment": "center",
+          "maxSize": 48
+        },
+        {
+          "id": "status",
+          "source": "status",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 77,
+          "width": 90,
+          "height": 12,
+          "alignment": "center",
+          "maxSize": 14
+        },
+        {
+          "id": "date",
+          "source": "date",
+          "visible": true,
+          "content": "",
+          "weight": 400,
+          "color": "default",
+          "top": 92,
+          "width": 90,
+          "height": 10,
+          "alignment": "center",
+          "maxSize": 12
+        }
+      ]
+    }
+  }
+}

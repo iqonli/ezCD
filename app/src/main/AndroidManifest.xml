@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" android:maxSdkVersion="32"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <queries>
+        <intent><action android:name="android.intent.action.MAIN"/><category android:name="android.intent.category.HOME"/></intent>
+        <intent><action android:name="android.intent.action.GET_CONTENT"/><data android:mimeType="*/*"/></intent>
+        <intent><action android:name="org.openintents.action.PICK_DIRECTORY"/></intent>
+    </queries>
+    <application
+        android:name=".ui.EzcdApplication"
+        android:requestLegacyExternalStorage="true"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ezCD"
+        android:localeConfig="@xml/locales_config"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".widget.WidgetConfigActivity"
+            android:excludeFromRecents="false"
+            android:noHistory="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".widget.WidgetPinSetupActivity"
+            android:exported="false" />
+
+        <activity android:name=".widget.WidgetLibraryActivity" android:exported="false"/>
+        <activity android:name=".widget.WidgetLibraryEditorActivity" android:exported="false"/>
+        <activity android:name=".ui.SettingsActivity" android:exported="false" />
+        <activity android:name=".fonts.FontManagerActivity" android:exported="false" />
+        <activity android:name=".fonts.FontSelectorActivity" android:exported="false" />
+        <activity android:name=".fonts.FontPreviewActivity" android:exported="false" />
+
+        <activity
+            android:name=".ui.AboutActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.EditorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".share.ShareImageProvider"
+            android:authorities="${applicationId}.share"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <receiver
+            android:name=".widget.CountdownWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/countdown_widget_info" />
+            <!-- BEGIN GENERATED PIN SIZES -->
+            <meta-data android:name="ezcd.widget.size.1x1" android:resource="@xml/pin_size_1_1" />
+            <meta-data android:name="ezcd.widget.size.1x2" android:resource="@xml/pin_size_1_2" />
+            <meta-data android:name="ezcd.widget.size.1x3" android:resource="@xml/pin_size_1_3" />
+            <meta-data android:name="ezcd.widget.size.1x4" android:resource="@xml/pin_size_1_4" />
+            <meta-data android:name="ezcd.widget.size.1x5" android:resource="@xml/pin_size_1_5" />
+            <meta-data android:name="ezcd.widget.size.1x6" android:resource="@xml/pin_size_1_6" />
+            <meta-data android:name="ezcd.widget.size.1x7" android:resource="@xml/pin_size_1_7" />
+            <meta-data android:name="ezcd.widget.size.1x8" android:resource="@xml/pin_size_1_8" />
+            <meta-data android:name="ezcd.widget.size.1x9" android:resource="@xml/pin_size_1_9" />
+            <meta-data android:name="ezcd.widget.size.1x10" android:resource="@xml/pin_size_1_10" />
+            <meta-data android:name="ezcd.widget.size.1x11" android:resource="@xml/pin_size_1_11" />
+            <meta-data android:name="ezcd.widget.size.1x12" android:resource="@xml/pin_size_1_12" />
+            <meta-data android:name="ezcd.widget.size.1x13" android:resource="@xml/pin_size_1_13" />
+            <meta-data android:name="ezcd.widget.size.1x14" android:resource="@xml/pin_size_1_14" />
+            <meta-data android:name="ezcd.widget.size.1x15" android:resource="@xml/pin_size_1_15" />
+            <meta-data android:name="ezcd.widget.size.1x16" android:resource="@xml/pin_size_1_16" />
+            <meta-data android:name="ezcd.widget.size.2x1" android:resource="@xml/pin_size_2_1" />
+            <meta-data android:name="ezcd.widget.size.2x2" android:resource="@xml/pin_size_2_2" />
+            <meta-data android:name="ezcd.widget.size.2x3" android:resource="@xml/pin_size_2_3" />
+            <meta-data android:name="ezcd.widget.size.2x4" android:resource="@xml/pin_size_2_4" />
+            <meta-data android:name="ezcd.widget.size.2x5" android:resource="@xml/pin_size_2_5" />
+            <meta-data android:name="ezcd.widget.size.2x6" android:resource="@xml/pin_size_2_6" />
+            <meta-data android:name="ezcd.widget.size.2x7" android:resource="@xml/pin_size_2_7" />
+            <meta-data android:name="ezcd.widget.size.2x8" android:resource="@xml/pin_size_2_8" />
+            <meta-data android:name="ezcd.widget.size.2x9" android:resource="@xml/pin_size_2_9" />
+            <meta-data android:name="ezcd.widget.size.2x10" android:resource="@xml/pin_size_2_10" />
+            <meta-data android:name="ezcd.widget.size.2x11" android:resource="@xml/pin_size_2_11" />
+            <meta-data android:name="ezcd.widget.size.2x12" android:resource="@xml/pin_size_2_12" />
+            <meta-data android:name="ezcd.widget.size.2x13" android:resource="@xml/pin_size_2_13" />
+            <meta-data android:name="ezcd.widget.size.2x14" android:resource="@xml/pin_size_2_14" />
+            <meta-data android:name="ezcd.widget.size.2x15" android:resource="@xml/pin_size_2_15" />
+            <meta-data android:name="ezcd.widget.size.2x16" android:resource="@xml/pin_size_2_16" />
+            <meta-data android:name="ezcd.widget.size.3x1" android:resource="@xml/pin_size_3_1" />
+            <meta-data android:name="ezcd.widget.size.3x2" android:resource="@xml/pin_size_3_2" />
+            <meta-data android:name="ezcd.widget.size.3x3" android:resource="@xml/pin_size_3_3" />
+            <meta-data android:name="ezcd.widget.size.3x4" android:resource="@xml/pin_size_3_4" />
+            <meta-data android:name="ezcd.widget.size.3x5" android:resource="@xml/pin_size_3_5" />
+            <meta-data android:name="ezcd.widget.size.3x6" android:resource="@xml/pin_size_3_6" />
+            <meta-data android:name="ezcd.widget.size.3x7" android:resource="@xml/pin_size_3_7" />
+            <meta-data android:name="ezcd.widget.size.3x8" android:resource="@xml/pin_size_3_8" />
+            <meta-data android:name="ezcd.widget.size.3x9" android:resource="@xml/pin_size_3_9" />
+            <meta-data android:name="ezcd.widget.size.3x10" android:resource="@xml/pin_size_3_10" />
+            <meta-data android:name="ezcd.widget.size.3x11" android:resource="@xml/pin_size_3_11" />
+            <meta-data android:name="ezcd.widget.size.3x12" android:resource="@xml/pin_size_3_12" />
+            <meta-data android:name="ezcd.widget.size.3x13" android:resource="@xml/pin_size_3_13" />
+            <meta-data android:name="ezcd.widget.size.3x14" android:resource="@xml/pin_size_3_14" />
+            <meta-data android:name="ezcd.widget.size.3x15" android:resource="@xml/pin_size_3_15" />
+            <meta-data android:name="ezcd.widget.size.3x16" android:resource="@xml/pin_size_3_16" />
+            <meta-data android:name="ezcd.widget.size.4x1" android:resource="@xml/pin_size_4_1" />
+            <meta-data android:name="ezcd.widget.size.4x2" android:resource="@xml/pin_size_4_2" />
+            <meta-data android:name="ezcd.widget.size.4x3" android:resource="@xml/pin_size_4_3" />
+            <meta-data android:name="ezcd.widget.size.4x4" android:resource="@xml/pin_size_4_4" />
+            <meta-data android:name="ezcd.widget.size.4x5" android:resource="@xml/pin_size_4_5" />
+            <meta-data android:name="ezcd.widget.size.4x6" android:resource="@xml/pin_size_4_6" />
+            <meta-data android:name="ezcd.widget.size.4x7" android:resource="@xml/pin_size_4_7" />
+            <meta-data android:name="ezcd.widget.size.4x8" android:resource="@xml/pin_size_4_8" />
+            <meta-data android:name="ezcd.widget.size.4x9" android:resource="@xml/pin_size_4_9" />
+            <meta-data android:name="ezcd.widget.size.4x10" android:resource="@xml/pin_size_4_10" />
+            <meta-data android:name="ezcd.widget.size.4x11" android:resource="@xml/pin_size_4_11" />
+            <meta-data android:name="ezcd.widget.size.4x12" android:resource="@xml/pin_size_4_12" />
+            <meta-data android:name="ezcd.widget.size.4x13" android:resource="@xml/pin_size_4_13" />
+            <meta-data android:name="ezcd.widget.size.4x14" android:resource="@xml/pin_size_4_14" />
+            <meta-data android:name="ezcd.widget.size.4x15" android:resource="@xml/pin_size_4_15" />
+            <meta-data android:name="ezcd.widget.size.4x16" android:resource="@xml/pin_size_4_16" />
+            <meta-data android:name="ezcd.widget.size.5x1" android:resource="@xml/pin_size_5_1" />
+            <meta-data android:name="ezcd.widget.size.5x2" android:resource="@xml/pin_size_5_2" />
+            <meta-data android:name="ezcd.widget.size.5x3" android:resource="@xml/pin_size_5_3" />
+            <meta-data android:name="ezcd.widget.size.5x4" android:resource="@xml/pin_size_5_4" />
+            <meta-data android:name="ezcd.widget.size.5x5" android:resource="@xml/pin_size_5_5" />
+            <meta-data android:name="ezcd.widget.size.5x6" android:resource="@xml/pin_size_5_6" />
+            <meta-data android:name="ezcd.widget.size.5x7" android:resource="@xml/pin_size_5_7" />
+            <meta-data android:name="ezcd.widget.size.5x8" android:resource="@xml/pin_size_5_8" />
+            <meta-data android:name="ezcd.widget.size.5x9" android:resource="@xml/pin_size_5_9" />
+            <meta-data android:name="ezcd.widget.size.5x10" android:resource="@xml/pin_size_5_10" />
+            <meta-data android:name="ezcd.widget.size.5x11" android:resource="@xml/pin_size_5_11" />
+            <meta-data android:name="ezcd.widget.size.5x12" android:resource="@xml/pin_size_5_12" />
+            <meta-data android:name="ezcd.widget.size.5x13" android:resource="@xml/pin_size_5_13" />
+            <meta-data android:name="ezcd.widget.size.5x14" android:resource="@xml/pin_size_5_14" />
+            <meta-data android:name="ezcd.widget.size.5x15" android:resource="@xml/pin_size_5_15" />
+            <meta-data android:name="ezcd.widget.size.5x16" android:resource="@xml/pin_size_5_16" />
+            <meta-data android:name="ezcd.widget.size.6x1" android:resource="@xml/pin_size_6_1" />
+            <meta-data android:name="ezcd.widget.size.6x2" android:resource="@xml/pin_size_6_2" />
+            <meta-data android:name="ezcd.widget.size.6x3" android:resource="@xml/pin_size_6_3" />
+            <meta-data android:name="ezcd.widget.size.6x4" android:resource="@xml/pin_size_6_4" />
+            <meta-data android:name="ezcd.widget.size.6x5" android:resource="@xml/pin_size_6_5" />
+            <meta-data android:name="ezcd.widget.size.6x6" android:resource="@xml/pin_size_6_6" />
+            <meta-data android:name="ezcd.widget.size.6x7" android:resource="@xml/pin_size_6_7" />
+            <meta-data android:name="ezcd.widget.size.6x8" android:resource="@xml/pin_size_6_8" />
+            <meta-data android:name="ezcd.widget.size.6x9" android:resource="@xml/pin_size_6_9" />
+            <meta-data android:name="ezcd.widget.size.6x10" android:resource="@xml/pin_size_6_10" />
+            <meta-data android:name="ezcd.widget.size.6x11" android:resource="@xml/pin_size_6_11" />
+            <meta-data android:name="ezcd.widget.size.6x12" android:resource="@xml/pin_size_6_12" />
+            <meta-data android:name="ezcd.widget.size.6x13" android:resource="@xml/pin_size_6_13" />
+            <meta-data android:name="ezcd.widget.size.6x14" android:resource="@xml/pin_size_6_14" />
+            <meta-data android:name="ezcd.widget.size.6x15" android:resource="@xml/pin_size_6_15" />
+            <meta-data android:name="ezcd.widget.size.6x16" android:resource="@xml/pin_size_6_16" />
+            <meta-data android:name="ezcd.widget.size.7x1" android:resource="@xml/pin_size_7_1" />
+            <meta-data android:name="ezcd.widget.size.7x2" android:resource="@xml/pin_size_7_2" />
+            <meta-data android:name="ezcd.widget.size.7x3" android:resource="@xml/pin_size_7_3" />
+            <meta-data android:name="ezcd.widget.size.7x4" android:resource="@xml/pin_size_7_4" />
+            <meta-data android:name="ezcd.widget.size.7x5" android:resource="@xml/pin_size_7_5" />
+            <meta-data android:name="ezcd.widget.size.7x6" android:resource="@xml/pin_size_7_6" />
+            <meta-data android:name="ezcd.widget.size.7x7" android:resource="@xml/pin_size_7_7" />
+            <meta-data android:name="ezcd.widget.size.7x8" android:resource="@xml/pin_size_7_8" />
+            <meta-data android:name="ezcd.widget.size.7x9" android:resource="@xml/pin_size_7_9" />
+            <meta-data android:name="ezcd.widget.size.7x10" android:resource="@xml/pin_size_7_10" />
+            <meta-data android:name="ezcd.widget.size.7x11" android:resource="@xml/pin_size_7_11" />
+            <meta-data android:name="ezcd.widget.size.7x12" android:resource="@xml/pin_size_7_12" />
+            <meta-data android:name="ezcd.widget.size.7x13" android:resource="@xml/pin_size_7_13" />
+            <meta-data android:name="ezcd.widget.size.7x14" android:resource="@xml/pin_size_7_14" />
+            <meta-data android:name="ezcd.widget.size.7x15" android:resource="@xml/pin_size_7_15" />
+            <meta-data android:name="ezcd.widget.size.7x16" android:resource="@xml/pin_size_7_16" />
+            <meta-data android:name="ezcd.widget.size.8x1" android:resource="@xml/pin_size_8_1" />
+            <meta-data android:name="ezcd.widget.size.8x2" android:resource="@xml/pin_size_8_2" />
+            <meta-data android:name="ezcd.widget.size.8x3" android:resource="@xml/pin_size_8_3" />
+            <meta-data android:name="ezcd.widget.size.8x4" android:resource="@xml/pin_size_8_4" />
+            <meta-data android:name="ezcd.widget.size.8x5" android:resource="@xml/pin_size_8_5" />
+            <meta-data android:name="ezcd.widget.size.8x6" android:resource="@xml/pin_size_8_6" />
+            <meta-data android:name="ezcd.widget.size.8x7" android:resource="@xml/pin_size_8_7" />
+            <meta-data android:name="ezcd.widget.size.8x8" android:resource="@xml/pin_size_8_8" />
+            <meta-data android:name="ezcd.widget.size.8x9" android:resource="@xml/pin_size_8_9" />
+            <meta-data android:name="ezcd.widget.size.8x10" android:resource="@xml/pin_size_8_10" />
+            <meta-data android:name="ezcd.widget.size.8x11" android:resource="@xml/pin_size_8_11" />
+            <meta-data android:name="ezcd.widget.size.8x12" android:resource="@xml/pin_size_8_12" />
+            <meta-data android:name="ezcd.widget.size.8x13" android:resource="@xml/pin_size_8_13" />
+            <meta-data android:name="ezcd.widget.size.8x14" android:resource="@xml/pin_size_8_14" />
+            <meta-data android:name="ezcd.widget.size.8x15" android:resource="@xml/pin_size_8_15" />
+            <meta-data android:name="ezcd.widget.size.8x16" android:resource="@xml/pin_size_8_16" />
+            <meta-data android:name="ezcd.widget.size.9x1" android:resource="@xml/pin_size_9_1" />
+            <meta-data android:name="ezcd.widget.size.9x2" android:resource="@xml/pin_size_9_2" />
+            <meta-data android:name="ezcd.widget.size.9x3" android:resource="@xml/pin_size_9_3" />
+            <meta-data android:name="ezcd.widget.size.9x4" android:resource="@xml/pin_size_9_4" />
+            <meta-data android:name="ezcd.widget.size.9x5" android:resource="@xml/pin_size_9_5" />
+            <meta-data android:name="ezcd.widget.size.9x6" android:resource="@xml/pin_size_9_6" />
+            <meta-data android:name="ezcd.widget.size.9x7" android:resource="@xml/pin_size_9_7" />
+            <meta-data android:name="ezcd.widget.size.9x8" android:resource="@xml/pin_size_9_8" />
+            <meta-data android:name="ezcd.widget.size.9x9" android:resource="@xml/pin_size_9_9" />
+            <meta-data android:name="ezcd.widget.size.9x10" android:resource="@xml/pin_size_9_10" />
+            <meta-data android:name="ezcd.widget.size.9x11" android:resource="@xml/pin_size_9_11" />
+            <meta-data android:name="ezcd.widget.size.9x12" android:resource="@xml/pin_size_9_12" />
+            <meta-data android:name="ezcd.widget.size.9x13" android:resource="@xml/pin_size_9_13" />
+            <meta-data android:name="ezcd.widget.size.9x14" android:resource="@xml/pin_size_9_14" />
+            <meta-data android:name="ezcd.widget.size.9x15" android:resource="@xml/pin_size_9_15" />
+            <meta-data android:name="ezcd.widget.size.9x16" android:resource="@xml/pin_size_9_16" />
+            <meta-data android:name="ezcd.widget.size.10x1" android:resource="@xml/pin_size_10_1" />
+            <meta-data android:name="ezcd.widget.size.10x2" android:resource="@xml/pin_size_10_2" />
+            <meta-data android:name="ezcd.widget.size.10x3" android:resource="@xml/pin_size_10_3" />
+            <meta-data android:name="ezcd.widget.size.10x4" android:resource="@xml/pin_size_10_4" />
+            <meta-data android:name="ezcd.widget.size.10x5" android:resource="@xml/pin_size_10_5" />
+            <meta-data android:name="ezcd.widget.size.10x6" android:resource="@xml/pin_size_10_6" />
+            <meta-data android:name="ezcd.widget.size.10x7" android:resource="@xml/pin_size_10_7" />
+            <meta-data android:name="ezcd.widget.size.10x8" android:resource="@xml/pin_size_10_8" />
+            <meta-data android:name="ezcd.widget.size.10x9" android:resource="@xml/pin_size_10_9" />
+            <meta-data android:name="ezcd.widget.size.10x10" android:resource="@xml/pin_size_10_10" />
+            <meta-data android:name="ezcd.widget.size.10x11" android:resource="@xml/pin_size_10_11" />
+            <meta-data android:name="ezcd.widget.size.10x12" android:resource="@xml/pin_size_10_12" />
+            <meta-data android:name="ezcd.widget.size.10x13" android:resource="@xml/pin_size_10_13" />
+            <meta-data android:name="ezcd.widget.size.10x14" android:resource="@xml/pin_size_10_14" />
+            <meta-data android:name="ezcd.widget.size.10x15" android:resource="@xml/pin_size_10_15" />
+            <meta-data android:name="ezcd.widget.size.10x16" android:resource="@xml/pin_size_10_16" />
+            <meta-data android:name="ezcd.widget.size.11x1" android:resource="@xml/pin_size_11_1" />
+            <meta-data android:name="ezcd.widget.size.11x2" android:resource="@xml/pin_size_11_2" />
+            <meta-data android:name="ezcd.widget.size.11x3" android:resource="@xml/pin_size_11_3" />
+            <meta-data android:name="ezcd.widget.size.11x4" android:resource="@xml/pin_size_11_4" />
+            <meta-data android:name="ezcd.widget.size.11x5" android:resource="@xml/pin_size_11_5" />
+            <meta-data android:name="ezcd.widget.size.11x6" android:resource="@xml/pin_size_11_6" />
+            <meta-data android:name="ezcd.widget.size.11x7" android:resource="@xml/pin_size_11_7" />
+            <meta-data android:name="ezcd.widget.size.11x8" android:resource="@xml/pin_size_11_8" />
+            <meta-data android:name="ezcd.widget.size.11x9" android:resource="@xml/pin_size_11_9" />
+            <meta-data android:name="ezcd.widget.size.11x10" android:resource="@xml/pin_size_11_10" />
+            <meta-data android:name="ezcd.widget.size.11x11" android:resource="@xml/pin_size_11_11" />
+            <meta-data android:name="ezcd.widget.size.11x12" android:resource="@xml/pin_size_11_12" />
+            <meta-data android:name="ezcd.widget.size.11x13" android:resource="@xml/pin_size_11_13" />
+            <meta-data android:name="ezcd.widget.size.11x14" android:resource="@xml/pin_size_11_14" />
+            <meta-data android:name="ezcd.widget.size.11x15" android:resource="@xml/pin_size_11_15" />
+            <meta-data android:name="ezcd.widget.size.11x16" android:resource="@xml/pin_size_11_16" />
+            <meta-data android:name="ezcd.widget.size.12x1" android:resource="@xml/pin_size_12_1" />
+            <meta-data android:name="ezcd.widget.size.12x2" android:resource="@xml/pin_size_12_2" />
+            <meta-data android:name="ezcd.widget.size.12x3" android:resource="@xml/pin_size_12_3" />
+            <meta-data android:name="ezcd.widget.size.12x4" android:resource="@xml/pin_size_12_4" />
+            <meta-data android:name="ezcd.widget.size.12x5" android:resource="@xml/pin_size_12_5" />
+            <meta-data android:name="ezcd.widget.size.12x6" android:resource="@xml/pin_size_12_6" />
+            <meta-data android:name="ezcd.widget.size.12x7" android:resource="@xml/pin_size_12_7" />
+            <meta-data android:name="ezcd.widget.size.12x8" android:resource="@xml/pin_size_12_8" />
+            <meta-data android:name="ezcd.widget.size.12x9" android:resource="@xml/pin_size_12_9" />
+            <meta-data android:name="ezcd.widget.size.12x10" android:resource="@xml/pin_size_12_10" />
+            <meta-data android:name="ezcd.widget.size.12x11" android:resource="@xml/pin_size_12_11" />
+            <meta-data android:name="ezcd.widget.size.12x12" android:resource="@xml/pin_size_12_12" />
+            <meta-data android:name="ezcd.widget.size.12x13" android:resource="@xml/pin_size_12_13" />
+            <meta-data android:name="ezcd.widget.size.12x14" android:resource="@xml/pin_size_12_14" />
+            <meta-data android:name="ezcd.widget.size.12x15" android:resource="@xml/pin_size_12_15" />
+            <meta-data android:name="ezcd.widget.size.12x16" android:resource="@xml/pin_size_12_16" />
+            <meta-data android:name="ezcd.widget.size.13x1" android:resource="@xml/pin_size_13_1" />
+            <meta-data android:name="ezcd.widget.size.13x2" android:resource="@xml/pin_size_13_2" />
+            <meta-data android:name="ezcd.widget.size.13x3" android:resource="@xml/pin_size_13_3" />
+            <meta-data android:name="ezcd.widget.size.13x4" android:resource="@xml/pin_size_13_4" />
+            <meta-data android:name="ezcd.widget.size.13x5" android:resource="@xml/pin_size_13_5" />
+            <meta-data android:name="ezcd.widget.size.13x6" android:resource="@xml/pin_size_13_6" />
+            <meta-data android:name="ezcd.widget.size.13x7" android:resource="@xml/pin_size_13_7" />
+            <meta-data android:name="ezcd.widget.size.13x8" android:resource="@xml/pin_size_13_8" />
+            <meta-data android:name="ezcd.widget.size.13x9" android:resource="@xml/pin_size_13_9" />
+            <meta-data android:name="ezcd.widget.size.13x10" android:resource="@xml/pin_size_13_10" />
+            <meta-data android:name="ezcd.widget.size.13x11" android:resource="@xml/pin_size_13_11" />
+            <meta-data android:name="ezcd.widget.size.13x12" android:resource="@xml/pin_size_13_12" />
+            <meta-data android:name="ezcd.widget.size.13x13" android:resource="@xml/pin_size_13_13" />
+            <meta-data android:name="ezcd.widget.size.13x14" android:resource="@xml/pin_size_13_14" />
+            <meta-data android:name="ezcd.widget.size.13x15" android:resource="@xml/pin_size_13_15" />
+            <meta-data android:name="ezcd.widget.size.13x16" android:resource="@xml/pin_size_13_16" />
+            <meta-data android:name="ezcd.widget.size.14x1" android:resource="@xml/pin_size_14_1" />
+            <meta-data android:name="ezcd.widget.size.14x2" android:resource="@xml/pin_size_14_2" />
+            <meta-data android:name="ezcd.widget.size.14x3" android:resource="@xml/pin_size_14_3" />
+            <meta-data android:name="ezcd.widget.size.14x4" android:resource="@xml/pin_size_14_4" />
+            <meta-data android:name="ezcd.widget.size.14x5" android:resource="@xml/pin_size_14_5" />
+            <meta-data android:name="ezcd.widget.size.14x6" android:resource="@xml/pin_size_14_6" />
+            <meta-data android:name="ezcd.widget.size.14x7" android:resource="@xml/pin_size_14_7" />
+            <meta-data android:name="ezcd.widget.size.14x8" android:resource="@xml/pin_size_14_8" />
+            <meta-data android:name="ezcd.widget.size.14x9" android:resource="@xml/pin_size_14_9" />
+            <meta-data android:name="ezcd.widget.size.14x10" android:resource="@xml/pin_size_14_10" />
+            <meta-data android:name="ezcd.widget.size.14x11" android:resource="@xml/pin_size_14_11" />
+            <meta-data android:name="ezcd.widget.size.14x12" android:resource="@xml/pin_size_14_12" />
+            <meta-data android:name="ezcd.widget.size.14x13" android:resource="@xml/pin_size_14_13" />
+            <meta-data android:name="ezcd.widget.size.14x14" android:resource="@xml/pin_size_14_14" />
+            <meta-data android:name="ezcd.widget.size.14x15" android:resource="@xml/pin_size_14_15" />
+            <meta-data android:name="ezcd.widget.size.14x16" android:resource="@xml/pin_size_14_16" />
+            <meta-data android:name="ezcd.widget.size.15x1" android:resource="@xml/pin_size_15_1" />
+            <meta-data android:name="ezcd.widget.size.15x2" android:resource="@xml/pin_size_15_2" />
+            <meta-data android:name="ezcd.widget.size.15x3" android:resource="@xml/pin_size_15_3" />
+            <meta-data android:name="ezcd.widget.size.15x4" android:resource="@xml/pin_size_15_4" />
+            <meta-data android:name="ezcd.widget.size.15x5" android:resource="@xml/pin_size_15_5" />
+            <meta-data android:name="ezcd.widget.size.15x6" android:resource="@xml/pin_size_15_6" />
+            <meta-data android:name="ezcd.widget.size.15x7" android:resource="@xml/pin_size_15_7" />
+            <meta-data android:name="ezcd.widget.size.15x8" android:resource="@xml/pin_size_15_8" />
+            <meta-data android:name="ezcd.widget.size.15x9" android:resource="@xml/pin_size_15_9" />
+            <meta-data android:name="ezcd.widget.size.15x10" android:resource="@xml/pin_size_15_10" />
+            <meta-data android:name="ezcd.widget.size.15x11" android:resource="@xml/pin_size_15_11" />
+            <meta-data android:name="ezcd.widget.size.15x12" android:resource="@xml/pin_size_15_12" />
+            <meta-data android:name="ezcd.widget.size.15x13" android:resource="@xml/pin_size_15_13" />
+            <meta-data android:name="ezcd.widget.size.15x14" android:resource="@xml/pin_size_15_14" />
+            <meta-data android:name="ezcd.widget.size.15x15" android:resource="@xml/pin_size_15_15" />
+            <meta-data android:name="ezcd.widget.size.15x16" android:resource="@xml/pin_size_15_16" />
+            <meta-data android:name="ezcd.widget.size.16x1" android:resource="@xml/pin_size_16_1" />
+            <meta-data android:name="ezcd.widget.size.16x2" android:resource="@xml/pin_size_16_2" />
+            <meta-data android:name="ezcd.widget.size.16x3" android:resource="@xml/pin_size_16_3" />
+            <meta-data android:name="ezcd.widget.size.16x4" android:resource="@xml/pin_size_16_4" />
+            <meta-data android:name="ezcd.widget.size.16x5" android:resource="@xml/pin_size_16_5" />
+            <meta-data android:name="ezcd.widget.size.16x6" android:resource="@xml/pin_size_16_6" />
+            <meta-data android:name="ezcd.widget.size.16x7" android:resource="@xml/pin_size_16_7" />
+            <meta-data android:name="ezcd.widget.size.16x8" android:resource="@xml/pin_size_16_8" />
+            <meta-data android:name="ezcd.widget.size.16x9" android:resource="@xml/pin_size_16_9" />
+            <meta-data android:name="ezcd.widget.size.16x10" android:resource="@xml/pin_size_16_10" />
+            <meta-data android:name="ezcd.widget.size.16x11" android:resource="@xml/pin_size_16_11" />
+            <meta-data android:name="ezcd.widget.size.16x12" android:resource="@xml/pin_size_16_12" />
+            <meta-data android:name="ezcd.widget.size.16x13" android:resource="@xml/pin_size_16_13" />
+            <meta-data android:name="ezcd.widget.size.16x14" android:resource="@xml/pin_size_16_14" />
+            <meta-data android:name="ezcd.widget.size.16x15" android:resource="@xml/pin_size_16_15" />
+            <meta-data android:name="ezcd.widget.size.16x16" android:resource="@xml/pin_size_16_16" />
+            <!-- END GENERATED PIN SIZES -->
+        </receiver>
+
+        <receiver
+            android:name=".widget.WidgetRefreshReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.DATE_CHANGED" />
+                <action android:name="android.app.action.SCHEDULE_EXACT_ALARM_PERMISSION_STATE_CHANGED" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".widget.WidgetPinResultReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".notification.ArrivalNotificationReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".notification.NotificationBlockStateReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.app.action.APP_BLOCK_STATE_CHANGED" />
+                <action android:name="android.app.action.NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

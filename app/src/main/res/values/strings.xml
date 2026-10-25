@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name" translatable="false">ezCD</string>
+    <string name="app_logo_content_description" translatable="false">ezCD logo</string>
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_spanish" translatable="false">Spanish</string>
+    <string name="language_catalan" translatable="false">Catalan</string>
+    <string name="action_add_countdown" translatable="false">@string/action_add_event</string>
+    <string name="action_about" translatable="false">About</string>
+    <string name="action_save" translatable="false">Save</string>
+    <string name="action_share">Share</string>
+    <string name="action_delete" translatable="false">Delete</string>
+    <string name="action_cancel" translatable="false">Cancel</string>
+    <string name="theme_switch_to_light" translatable="false">Switch to light mode</string>
+    <string name="theme_switch_to_dark" translatable="false">Switch to dark mode</string>
+    <string name="theme_follow_system" translatable="false">Follow system theme</string>
+    <string name="empty_title" translatable="false">No events yet</string>
+    <string name="empty_description" translatable="false">Add a trip, exam, birthday, anniversary, or any date worth tracking.</string>
+    <string name="data_error_title" translatable="false">Saved data needs attention</string>
+    <string name="data_error_description" translatable="false">ezCD stopped editing to protect the existing file. Restore a valid backup from About before making changes.</string>
+    <string name="event_meta" translatable="false">%1$s · %2$s</string>
+    <string name="status_done" translatable="false">Done</string>
+    <string name="share_countdown_format">%1$s — %2$s · %3$s</string>
+    <string name="editor_new_title" translatable="false">@string/event_new_title</string>
+    <string name="editor_edit_title" translatable="false">@string/event_edit_title</string>
+    <string name="field_type" translatable="false">Type</string>
+    <string name="field_icon" translatable="false">Icon</string>
+    <string name="field_title" translatable="false">Title</string>
+    <string name="field_date" translatable="false">Date</string>
+    <string name="field_reminder" translatable="false">Reminder</string>
+    <string name="reminder_off" translatable="false">Off</string>
+    <string name="reminder_on_day" translatable="false">On the day</string>
+    <string name="reminder_one_day" translatable="false">1 day before</string>
+    <string name="reminder_three_days" translatable="false">3 days before</string>
+    <string name="reminder_seven_days" translatable="false">7 days before</string>
+    <string name="notification_permission_denied" translatable="false">Notification permission was not granted.</string>
+    <string name="title_required" translatable="false">Give this event a title.</string>
+    <string name="delete_title" translatable="false">Delete event?</string>
+    <string name="delete_message" translatable="false">Delete "%1$s"?</string>
+    <string name="data_error_edit_blocked" translatable="false">ezCD could not safely read its saved data. Editing is disabled to avoid overwriting it.</string>
+    <string name="event_type_trip">Trip</string>
+    <string name="event_type_exam">Exam</string>
+    <string name="event_type_party">Party</string>
+    <string name="event_type_birthday">Birthday</string>
+    <string name="event_type_anniversary">Anniversary</string>
+    <string name="event_type_concert">Concert</string>
+    <string name="event_type_deadline">Deadline</string>
+    <string name="event_type_event">Event</string>
+    <string name="event_type_custom">Custom</string>
+    <string name="event_icon_airplane">Airplane</string>
+    <string name="event_icon_book">Book</string>
+    <string name="event_icon_confetti">Celebration</string>
+    <string name="event_icon_cake">Cake</string>
+    <string name="event_icon_heart">Heart</string>
+    <string name="event_icon_music">Music</string>
+    <string name="event_icon_hourglass">Hourglass</string>
+    <string name="event_icon_calendar">Calendar</string>
+    <string name="event_icon_star">Star</string>
+    <string name="event_icon_gift">Gift</string>
+    <string name="event_icon_flag">Flag</string>
+    <string name="event_icon_pin">Pin</string>
+    <string name="widget_name" translatable="false">@string/app_name</string>
+    <string name="widget_select_countdown" translatable="false">@string/widget_select_event</string>
+    <string name="widget_config_title" translatable="false">@string/widget_select_event</string>
+    <string name="widget_config_description" translatable="false">Choose what this widget should keep an eye on.</string>
+    <string name="widget_config_empty" translatable="false">No events yet. Create one first, then come back here.</string>
+    <string name="widget_create_countdown" translatable="false">Create event</string>
+    <string name="widget_next_countdown" translatable="false">Next countdown</string>
+    <string name="widget_appearance_label" translatable="false">Appearance</string>
+    <string name="widget_appearance_system" translatable="false">System</string>
+    <string name="widget_appearance_light" translatable="false">Light</string>
+    <string name="widget_appearance_dark" translatable="false">Dark</string>
+    <string name="widget_background_label" translatable="false">Background</string>
+    <string name="widget_background_classic" translatable="false">Classic</string>
+    <string name="widget_background_mist" translatable="false">Mist</string>
+    <string name="widget_background_horizon" translatable="false">Horizon</string>
+    <string name="widget_background_forest" translatable="false">Forest</string>
+    <string name="widget_background_sunset" translatable="false">Sunset</string>
+    <string name="widget_background_six" translatable="false">Ridge</string>
+    <string name="widget_add_to_home" translatable="false">Save widget</string>
+    <string name="widget_add_from_event" translatable="false">Add widget for this event</string>
+    <string name="widget_save_before_pin" translatable="false">Save your changes before adding the widget.</string>
+    <string name="widget_open_countdown" translatable="false">@string/widget_open_event</string>
+    <string name="widget_event_option" translatable="false">%1$s · %2$s</string>
+    <string name="about_version" translatable="false">Version %1$s</string>
+    <string name="about_privacy" translatable="false">ezCD has no accounts, ads, analytics, or network access. Your data stays local unless you export a backup to a provider you choose.</string>
+    <string name="backup_title" translatable="false">Local backup</string>
+    <string name="backup_description" translatable="false">Export or restore your events using a plain JSON file you control. Where that file is stored depends on the provider you choose.</string>
+    <string name="backup_export" translatable="false">Export backup</string>
+    <string name="backup_import" translatable="false">Import backup</string>
+    <string name="backup_export_success">Backup exported!</string>
+    <string name="backup_export_failed">Could not export the backup.</string>
+    <string name="backup_import_action" translatable="false">Replace events</string>
+    <string name="backup_import_invalid">This is not a valid ezCD backup.</string>
+    <string name="backup_import_failed">Could not import the backup.</string>
+    <string name="backup_import_success">Backup imported!</string>
+    <string name="backup_import_confirm_title" translatable="false">Import backup?</string>
+    <plurals name="backup_import_confirm_message" translatable="false">
+        <item quantity="one">This will replace your current events with %1$d event from the backup.</item>
+        <item quantity="other">This will replace your current events with %1$d events from the backup.</item>
+    </plurals>
+    <string name="about_author" translatable="false">Created by santiagorodriguez.com</string>
+    <string name="about_donate" translatable="false">Donate</string>
+    <string name="about_donate_note" translatable="false">If this saved you from checking the calendar twelve times a day, you can support the noble cause of keeping simple things simple.</string>
+</resources>

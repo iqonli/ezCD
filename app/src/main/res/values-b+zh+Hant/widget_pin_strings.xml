@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="ez_pin_custom_size">自訂小工具大小</string>
+  <string name="ez_pin_width">寬度</string>
+  <string name="ez_pin_height">高度</string>
+  <string name="ez_pin_cells">格</string>
+  <string name="ez_pin_range">%1$d–%2$d</string>
+  <string name="ez_pin_grid">桌面配置：%1$d × %2$d 格</string>
+  <string name="ez_pin_grid_unknown">桌面未提供網格範圍，最終尺寸以桌面確認為準；新增後可在桌面調整。</string>
+  <string name="ez_pin_permission_denied">系統已禁止建立桌面捷徑，請先在應用程式權限中允許。</string>
+  <string name="ez_pin_open_permissions">前往設定</string>
+  <string name="ez_pin_old_system">目前系統需先新增小工具，再在桌面調整大小。</string>
+</resources>
